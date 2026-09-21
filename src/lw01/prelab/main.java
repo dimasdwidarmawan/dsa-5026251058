@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class main {
     public static void main(String[] args) {
         List<PrintJob> jobs = new ArrayList<>();
 
-        // Pastikan file jobs.txt berada di direktori yang tepat (root project atau
-        // folder yang dieksekusi)
         File file = new File("jobs.txt");
 
         try (Scanner scanner = new Scanner(file)) {
@@ -29,7 +27,6 @@ public class Main {
             return;
         }
 
-        // Mendemonstrasikan runtime polymorphism melalui referensi parent
         for (PrintJob job : jobs) {
             System.out.println(job.summary());
         }
