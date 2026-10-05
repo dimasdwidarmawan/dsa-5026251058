@@ -128,6 +128,15 @@ public class Main {
 
                 if (type.equals("ADD")) {
                     inventory.put(product, inventory.getOrDefault(product, 0) + quantity);
+                    if(inventory,containskey(product)){
+                        int currentQuantity = inventory.get(product);
+                        inventory.put(product, currentQuantity + quantity);
+                    }
+
+                    else{
+                        inventory.put(product, quantity);
+                    }
+                    
                 } else if (type.equals("SELL")) {
                     if (inventory.containsKey(product) && inventory.get(product) >= quantity) {
                         inventory.put(product, inventory.get(product) - quantity);
